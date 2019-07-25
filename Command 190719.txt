@@ -1,0 +1,725 @@
+mllab21@mllab21:~$ mysql -u varun -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'varun'@'localhost' (using password: YES)
+mllab21@mllab21:~$ mysql -u Varun -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.7.26 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| Assignment3        |
+| Operating_System   |
+| Varun              |
+| er                 |
+| er1                |
+| foodhub            |
+| game               |
+| music              |
+| music_data         |
+| music_db           |
+| mysql              |
+| order_manage       |
+| order_management   |
+| performance_schema |
+| practise           |
+| product            |
+| project            |
+| sys                |
+| temp               |
++--------------------+
+20 rows in set (0.09 sec)
+
+mysql> use Varun;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_Varun |
++-----------------+
+| Address         |
+| Contains        |
+| Delivery        |
+| Item            |
+| Orders          |
+| User            |
++-----------------+
+6 rows in set (0.00 sec)
+
+mysql> describe Contains;
++---------+---------+------+-----+---------+-------+
+| Field   | Type    | Null | Key | Default | Extra |
++---------+---------+------+-----+---------+-------+
+| OID     | int(11) | NO   | PRI | NULL    |       |
+| Item_no | int(11) | NO   | PRI | NULL    |       |
++---------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table Contains add quantity int not null;
+Query OK, 0 rows affected (0.39 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe Contains;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| OID      | int(11) | NO   | PRI | NULL    |       |
+| Item_no  | int(11) | NO   | PRI | NULL    |       |
+| quantity | int(11) | NO   |     | NULL    |       |
++----------+---------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from User;
++-----+-----------+---------------+------------+----------------------------------------+
+| UID | fName     | lName         | phone      | email                                  |
++-----+-----------+---------------+------------+----------------------------------------+
+|   1 | Varun     | Gawande       | 9619939148 | vg@gmail.com                           |
+|   2 | Jash      | Gujarati      | 4568761231 | jg@gmail.com                           |
+|   3 | Ayushi    | Patani        | 3692764857 | ap@gmail.com                           |
+|   4 | Savita    | Bhabi         | 1234123465 | sb@gmail.com                           |
+|   5 | Sampada   | Launda        | 9476581235 | sl@gmail.com                           |
+|   8 | Supriya   | Ghagare       | 1234567834 | sg@gmail.com                           |
+|   9 | Shradha   | Rajbhoj       | 1233867834 | sr@gmail.com                           |
+|  10 | Mihir     | Pandharipande | 1983867834 | mp@gmail.com                           |
+|  11 | Arti      | Choudhary     | 9183467834 | ac@gmail.com                           |
+|  12 | Yash      | Gupta         | 8348993834 | yg@gmail.com                           |
+|  13 | Finn      | Rodriguez     | 5006836342 | placerat.eget@sit.org                  |
+|  14 | Wesley    | Hill          | 7248948386 | sem@dictum.net                         |
+|  15 | Carter    | Conrad        | 7197091879 | non@Donec.co.uk                        |
+|  16 | September | Ramos         | 4204479752 | dignissim@dolor.ca                     |
+|  17 | Quintessa | Parrish       | 6423918238 | nulla@orcilobortis.ca                  |
+|  18 | Simone    | Bartlett      |  230438154 | mi.Aliquam.gravida@metus.com           |
+|  19 | Justin    | Gibbs         | 3180473872 | Donec@tempusmauris.org                 |
+|  20 | Kitra     | Parker        | 3699522119 | id@Sed.com                             |
+|  21 | Finn      | Hall          | 7427801619 | nonummy.ultricies.ornare@venenatis.org |
+|  22 | Brent     | Sargent       | 2153276850 | Vestibulum@nulla.com                   |
+|  23 | Lara      | Stricksland   | 1728441003 | ut@iaculisnec.com                      |
+|  24 | Haviva    | Garza         | 5945124702 | sociis@nonummy.edu                     |
+|  25 | Kibo      | Ryan          | 4582924877 | in.sodales@ligulaelit.net              |
+|  26 | Wayne     | Hood          |  600079020 | eu.lacus.Quisque@augueeu.com           |
++-----+-----------+---------------+------------+----------------------------------------+
+24 rows in set (0.00 sec)
+
+mysql> select * from Item;
++---------+----------+----------+--------+
+| item_ID | name     | supplier | amount |
++---------+----------+----------+--------+
+|       1 | Mouse    | Dell     |    560 |
+|       2 | Keyboard | Dell     |   1260 |
+|       3 | Monitor  | Dell     |   8000 |
+|       4 | Watch    | Fastrack |   4000 |
+|       5 | Pen      | Reynolds |     10 |
+|       6 | Pencil   | Camlin   |      5 |
+|       7 | Desktop  | ASUS     |  45000 |
+|       8 | OP7+     | OnePlus  |  72000 |
+|       9 | OP7      | OnePlus  |  60000 |
+|      10 | HairClip | Korea    |     30 |
++---------+----------+----------+--------+
+10 rows in set (0.00 sec)
+
+mysql> describe Item;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| item_ID  | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name     | varchar(50) | NO   |     | NULL    |                |
+| supplier | varchar(50) | NO   |     | NULL    |                |
+| amount   | int(11)     | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into Item(name,supplier,amount) value("Pasta","Suspendisse",8445);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into Item(name,supplier,amount) value("","",);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into Item(name,supplier,amount) value("Soup","soups",227);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into Item(name,supplier,amount) value("","",);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into Item(name,supplier,amount) value("Cereal","Odio Etium",1200);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into Item(name,supplier,amount) value("","",);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into Item(name,supplier,amount) value("","",);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> insert into Item(name,supplier,amount) value("Stew","Pede",1400);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into Item(name,supplier,amount) value("","",);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into Item(name,supplier,amount) value("Noodles","Lectus",520);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into Item(name,supplier,amount) value("","",);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into Item(name,supplier,amount) value("Sandwich","Senectus",260);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into Item(name,supplier,amount) value("","",);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into Item(name,supplier,amount) value("Salad","Sed Diam",50);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into Item(name,supplier,amount) value("","",);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into Item(name,supplier,amount) value("Dessert","Condimentum",5600);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from Iteml
+    -> select * from Item;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from Item' at line 2
+mysql> select * from Iteml select * from Item;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from Item' at line 1
+mysql> select * from Item;
++---------+----------+-------------+--------+
+| item_ID | name     | supplier    | amount |
++---------+----------+-------------+--------+
+|       1 | Mouse    | Dell        |    560 |
+|       2 | Keyboard | Dell        |   1260 |
+|       3 | Monitor  | Dell        |   8000 |
+|       4 | Watch    | Fastrack    |   4000 |
+|       5 | Pen      | Reynolds    |     10 |
+|       6 | Pencil   | Camlin      |      5 |
+|       7 | Desktop  | ASUS        |  45000 |
+|       8 | OP7+     | OnePlus     |  72000 |
+|       9 | OP7      | OnePlus     |  60000 |
+|      10 | HairClip | Korea       |     30 |
+|      11 | Pasta    | Suspendisse |   8445 |
+|      12 | Soup     | soups       |    227 |
+|      13 | Cereal   | Odio Etium  |   1200 |
+|      14 | Stew     | Pede        |   1400 |
+|      15 | Noodles  | Lectus      |    520 |
+|      16 | Sandwich | Senectus    |    260 |
+|      17 | Salad    | Sed Diam    |     50 |
+|      18 | Dessert  | Condimentum |   5600 |
++---------+----------+-------------+--------+
+18 rows in set (0.00 sec)
+
+mysql> insert into Item(name,supplier,amount) value("Windows10","Microsoft",10500);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into Item(name,supplier,amount) value("PlayStation","Sony",35500);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from Item;
++---------+-------------+-------------+--------+
+| item_ID | name        | supplier    | amount |
++---------+-------------+-------------+--------+
+|       1 | Mouse       | Dell        |    560 |
+|       2 | Keyboard    | Dell        |   1260 |
+|       3 | Monitor     | Dell        |   8000 |
+|       4 | Watch       | Fastrack    |   4000 |
+|       5 | Pen         | Reynolds    |     10 |
+|       6 | Pencil      | Camlin      |      5 |
+|       7 | Desktop     | ASUS        |  45000 |
+|       8 | OP7+        | OnePlus     |  72000 |
+|       9 | OP7         | OnePlus     |  60000 |
+|      10 | HairClip    | Korea       |     30 |
+|      11 | Pasta       | Suspendisse |   8445 |
+|      12 | Soup        | soups       |    227 |
+|      13 | Cereal      | Odio Etium  |   1200 |
+|      14 | Stew        | Pede        |   1400 |
+|      15 | Noodles     | Lectus      |    520 |
+|      16 | Sandwich    | Senectus    |    260 |
+|      17 | Salad       | Sed Diam    |     50 |
+|      18 | Dessert     | Condimentum |   5600 |
+|      19 | Windows10   | Microsoft   |  10500 |
+|      20 | PlayStation | Sony        |  35500 |
++---------+-------------+-------------+--------+
+20 rows in set (0.00 sec)
+
+mysql> describe Contains;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| OID      | int(11) | NO   | PRI | NULL    |       |
+| Item_no  | int(11) | NO   | PRI | NULL    |       |
+| quantity | int(11) | NO   |     | NULL    |       |
++----------+---------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table Contains modify OID references Orders (OID) ON DELETE CASCADE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'references Orders (OID) ON DELETE CASCADE' at line 1
+mysql> show create table Contains;
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                                                            |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Contains | CREATE TABLE `Contains` (
+  `OID` int(11) NOT NULL,
+  `Item_no` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`OID`,`Item_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> alter table Contains add foreign key(OID) references Orders(OID) on delete cascade;
+Query OK, 0 rows affected (0.46 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table Contains add foreign key(Item_no) references Item(Item_no) on delete cascade;
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> show create table Contains;
++----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                                                                                                                                                              |
++----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Contains | CREATE TABLE `Contains` (
+  `OID` int(11) NOT NULL,
+  `Item_no` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`OID`,`Item_no`),
+  CONSTRAINT `Contains_ibfk_1` FOREIGN KEY (`OID`) REFERENCES `Orders` (`OID`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.01 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_Varun |
++-----------------+
+| Address         |
+| Contains        |
+| Delivery        |
+| Item            |
+| Orders          |
+| User            |
++-----------------+
+6 rows in set (0.00 sec)
+
+mysql> alter table Contains add foreign key(Item_no) references Item(Item_no) on delete cascade;
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> describe Item;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| item_ID  | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name     | varchar(50) | NO   |     | NULL    |                |
+| supplier | varchar(50) | NO   |     | NULL    |                |
+| amount   | int(11)     | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> alter table Contains add foreign key(Item_no) references Item(item_no) on delete cascade;
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> alter table Contains add foreign key(item_no) references Item(item_no) on delete cascade;
+ERROR 1215 (HY000): Cannot add foreign key constraint
+mysql> alter table Contains add foreign key(item_no) references Item(item_no) on delete cascade;^C
+mysql> alter table Contains rename item_no to item_ID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to item_ID' at line 1
+mysql> alter table Contains rename column item_no to item_ID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column item_no to item_ID' at line 1
+mysql> alter table Contains rename column item_no to item_ID int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column item_no to item_ID int not null' at line 1
+mysql> alter table Contains rename column item_no item_ID int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column item_no item_ID int not null' at line 1
+mysql> describe Contains;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| OID      | int(11) | NO   | PRI | NULL    |       |
+| Item_no  | int(11) | NO   | PRI | NULL    |       |
+| quantity | int(11) | NO   |     | NULL    |       |
++----------+---------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table Contains rename column Item_no item_ID int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column Item_no item_ID int not null' at line 1
+mysql> alter table Contains rename column Item_no item_ID int notALTER TABLE table_name RENAME COLUMN old_col_name TO new_col_name;^Cull;
+mysql> ALTER TABLE Contains RENAME COLUMN Item_no TO item_ID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN Item_no TO item_ID' at line 1
+mysql> ALTER TABLE Contains RENAME COLUMN Item_no TO item_ID int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN Item_no TO item_ID int not null' at line 1
+mysql> ALTER TABLE Contains RENAME COLUMN Item_no TO item_ID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN Item_no TO item_ID' at line 1
+mysql> ALTER TABLE Contains RENAME COLUMN Item_no item_ID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN Item_no item_ID' at line 1
+mysql> ALTER TABLE Contains RENAME COLUMN Item_no TO item_ID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN Item_no TO item_ID' at line 1
+mysql> alter table Contains drop Item_no;
+Query OK, 0 rows affected (0.39 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table Contains add column(item_ID int not null) after OID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'after OID' at line 1
+mysql> alter table Contains add column item_ID int not null after OID;
+Query OK, 0 rows affected (0.31 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table Contains modify add foreign key (item_ID) references Item(item_ID);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add foreign key (item_ID) references Item(item_ID)' at line 1
+mysql> alter table Contains modify add foreign key (item_ID) references Item(item_ID) on delete cascade;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add foreign key (item_ID) references Item(item_ID) on delete cascade' at line 1
+mysql> alter table Contains add foreign key (item_ID) references Item(item_ID) on delete cascade;
+Query OK, 0 rows affected (0.56 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe Contains;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| OID      | int(11) | NO   | PRI | NULL    |       |
+| item_ID  | int(11) | NO   | MUL | NULL    |       |
+| quantity | int(11) | NO   |     | NULL    |       |
++----------+---------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> show table Contains;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Contains' at line 1
+mysql> show create table Contains;
++----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                                                                                                                                                                                                                                                                                         |
++----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Contains | CREATE TABLE `Contains` (
+  `OID` int(11) NOT NULL,
+  `item_ID` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`OID`),
+  KEY `item_ID` (`item_ID`),
+  CONSTRAINT `Contains_ibfk_1` FOREIGN KEY (`OID`) REFERENCES `Orders` (`OID`) ON DELETE CASCADE,
+  CONSTRAINT `Contains_ibfk_2` FOREIGN KEY (`item_ID`) REFERENCES `Item` (`item_ID`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> alter table Contains drop primary key;
+ERROR 1025 (HY000): Error on rename of './Varun/#sql-388_3' to './Varun/Contains' (errno: 150 - Foreign key constraint is incorrectly formed)
+mysql> alter table Contains drop primary key;
+ERROR 1025 (HY000): Error on rename of './Varun/#sql-388_3' to './Varun/Contains' (errno: 150 - Foreign key constraint is incorrectly formed)
+mysql> alter table Contains drop primary key;
+ERROR 1025 (HY000): Error on rename of './Varun/#sql-388_3' to './Varun/Contains' (errno: 150 - Foreign key constraint is incorrectly formed)
+mysql> alter table Contains drop primary key;
+ERROR 1025 (HY000): Error on rename of './Varun/#sql-388_3' to './Varun/Contains' (errno: 150 - Foreign key constraint is incorrectly formed)
+mysql> alter table Contains drop primary key,add primary key(OID,item_ID);
+Query OK, 0 rows affected (0.37 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> show create table Contains;
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                                                                                                                                                                                                                                                                                                   |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Contains | CREATE TABLE `Contains` (
+  `OID` int(11) NOT NULL,
+  `item_ID` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`OID`,`item_ID`),
+  KEY `item_ID` (`item_ID`),
+  CONSTRAINT `Contains_ibfk_1` FOREIGN KEY (`OID`) REFERENCES `Orders` (`OID`) ON DELETE CASCADE,
+  CONSTRAINT `Contains_ibfk_2` FOREIGN KEY (`item_ID`) REFERENCES `Item` (`item_ID`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> describe Contains;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| OID      | int(11) | NO   | PRI | NULL    |       |
+| item_ID  | int(11) | NO   | PRI | NULL    |       |
+| quantity | int(11) | NO   |     | NULL    |       |
++----------+---------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_Varun |
++-----------------+
+| Address         |
+| Contains        |
+| Delivery        |
+| Item            |
+| Orders          |
+| User            |
++-----------------+
+6 rows in set (0.00 sec)
+
+mysql> describe Delibery;
+ERROR 1146 (42S02): Table 'Varun.Delibery' doesn't exist
+mysql> describe Delivery;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| DelID       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| agent_ID    | int(11)     | NO   |     | NULL    |                |
+| agent_Phone | bigint(20)  | NO   |     | NULL    |                |
+| agent_name  | varchar(20) | NO   |     | NULL    |                |
+| status      | varchar(25) | NO   |     | NULL    |                |
+| ETA         | varchar(20) | NO   |     | NULL    |                |
+| OID         | int(11)     | NO   | MUL | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> show create table Delivery;
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                                                                                                                                                                                                                                                                                                               |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Delivery | CREATE TABLE `Delivery` (
+  `DelID` int(11) NOT NULL AUTO_INCREMENT,
+  `agent_ID` int(11) NOT NULL,
+  `agent_Phone` bigint(20) NOT NULL,
+  `agent_name` varchar(20) NOT NULL,
+  `status` varchar(25) NOT NULL,
+  `ETA` varchar(20) NOT NULL,
+  `OID` int(11) NOT NULL,
+  PRIMARY KEY (`DelID`),
+  KEY `OID` (`OID`),
+  CONSTRAINT `Delivery_ibfk_1` FOREIGN KEY (`OID`) REFERENCES `Orders` (`OID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> alter table Delivery drop foreign key
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> alter table Delivery drop foreign key(OID);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(OID)' at line 1
+mysql> alter table Delivery modify drop foreign key(OID);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'drop foreign key(OID)' at line 1
+mysql> alter table Delivery modify drop foreign key OID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'drop foreign key OID' at line 1
+mysql> alter table Delivery drop foreign key OID;
+ERROR 1091 (42000): Can't DROP 'OID'; check that column/key exists
+mysql> alter table Delivery drop foreign key OID;
+ERROR 1091 (42000): Can't DROP 'OID'; check that column/key exists
+mysql> show create table Delivery;
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                                                                                                                                                                                                                                                                                                               |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Delivery | CREATE TABLE `Delivery` (
+  `DelID` int(11) NOT NULL AUTO_INCREMENT,
+  `agent_ID` int(11) NOT NULL,
+  `agent_Phone` bigint(20) NOT NULL,
+  `agent_name` varchar(20) NOT NULL,
+  `status` varchar(25) NOT NULL,
+  `ETA` varchar(20) NOT NULL,
+  `OID` int(11) NOT NULL,
+  PRIMARY KEY (`DelID`),
+  KEY `OID` (`OID`),
+  CONSTRAINT `Delivery_ibfk_1` FOREIGN KEY (`OID`) REFERENCES `Orders` (`OID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> alter table Delivery drop foreign key OID;
+ERROR 1091 (42000): Can't DROP 'OID'; check that column/key exists
+mysql> select * from Delivery;
+Empty set (0.00 sec)
+
+mysql> alter table Delivery drop OID;
+ERROR 1553 (HY000): Cannot drop index 'OID': needed in a foreign key constraint
+mysql> alter table Delivery modify drop OID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'drop OID' at line 1
+mysql> alter table Delivery drop OID;
+ERROR 1553 (HY000): Cannot drop index 'OID': needed in a foreign key constraint
+mysql> describe Delivery;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| DelID       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| agent_ID    | int(11)     | NO   |     | NULL    |                |
+| agent_Phone | bigint(20)  | NO   |     | NULL    |                |
+| agent_name  | varchar(20) | NO   |     | NULL    |                |
+| status      | varchar(25) | NO   |     | NULL    |                |
+| ETA         | varchar(20) | NO   |     | NULL    |                |
+| OID         | int(11)     | NO   | MUL | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> drop Delivery;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Delivery' at line 1
+mysql> drop table Delivery;
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> create table Delivery(DelID int not)
+    ->  ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> create table Delivery(DelID int not null auto_increment primary key ,
+    -> agent_ID int not null);
+Query OK, 0 rows affected (0.25 sec)
+
+mysql> alter table add column agent_Phone big int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add column agent_Phone big int not null' at line 1
+mysql> alter table add agent_Phone big int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add agent_Phone big int not null' at line 1
+mysql> alter table add agent_Phone bigint not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add agent_Phone bigint not null' at line 1
+mysql> alter table add column agent_Phone bigint not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add column agent_Phone bigint not null' at line 1
+mysql> alter table Delivery add column agent_Phone bigint not null;
+Query OK, 0 rows affected (0.32 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table Delivery add column agent_name varchar(20) not null;
+Query OK, 0 rows affected (0.38 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table Delivery add column status varchar(20) not null;
+^[[AQuery OK, 0 rows affected (0.35 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table Delivery add column ETA varchar(20) not null;
+^[[AQuery OK, 0 rows affected (0.42 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table add OID int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add OID int not null' at line 1
+mysql> alter table add column OID int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add column OID int not null' at line 1
+mysql> alter table Delivery add column OID int not null;
+Query OK, 0 rows affected (0.33 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table Delivery add constraint fk_OID foreign key (OID) references Orders(OID);
+Query OK, 0 rows affected (0.52 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe Delivery;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| DelID       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| agent_ID    | int(11)     | NO   |     | NULL    |                |
+| agent_Phone | bigint(20)  | NO   |     | NULL    |                |
+| agent_name  | varchar(20) | NO   |     | NULL    |                |
+| status      | varchar(20) | NO   |     | NULL    |                |
+| ETA         | varchar(20) | NO   |     | NULL    |                |
+| OID         | int(11)     | NO   | MUL | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> alter table Delivery modify OID on delete cascade;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on delete cascade' at line 1
+mysql> alter table D
+DATA                 DATETIME             DAYOFWEEK            DEFINER              Delivery.agent_name  DES_KEY_FILE         DISJOINT             DUMPFILE            
+DATABASE             DAY                  DAYOFYEAR            DEGREES              Delivery.agent_Phone DESC                 DISTINCT             DUPLICATE           
+DATABASES            DAY_HOUR             DEALLOCATE           DELAY_KEY_WRITE      Delivery.DelID       DESCRIBE             DISTINCTROW          DYNAMIC             
+DATE                 DAY_MICROSECOND      DEC                  DELAYED              Delivery.ETA         DETERMINISTIC        DIV                 
+DATE_ADD             DAY_MINUTE           DECIMAL              DELETE               Delivery.OID         DIMENSION            DO                  
+DATE_FORMAT          DAY_SECOND           DECLARE              DelID                Delivery.status      DIRECTORY            DOUBLE              
+DATE_SUB             DAYNAME              DECODE               Delivery             DES_DECRYPT          DISABLE              DROP                
+DATEDIFF             DAYOFMONTH           DEFAULT              Delivery.agent_ID    DES_ENCRYPT          DISCARD              DUAL                
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Del
+DelID                Delivery.agent_ID    Delivery.agent_Phone Delivery.ETA         Delivery.status     
+Delivery             Delivery.agent_name  Delivery.DelID       Delivery.OID        
+mysql> alter table Delivery
+Delivery             Delivery.agent_ID    Delivery.agent_name  Delivery.agent_Phone Delivery.DelID       Delivery.ETA         Delivery.OID         Delivery.status     
+mysql> alter table Delivery
+Delivery             Delivery.agent_ID    Delivery.agent_name  Delivery.agent_Phone Delivery.DelID       Delivery.ETA         Delivery.OID         Delivery.status     
+mysql> alter table Delivery 
+Display all 827 possibilities? (y or n) 
+mysql> alter table Delivery n 
+Display all 827 possibilities? (y or n) 
+mysql> alter table Delivery drop connect 
+Display all 827 possibilities? (y or n) 
+mysql> alter table Delivery drop connect 
+Display all 827 possibilities? (y or n) 
+mysql> alter table Delivery drop foreign key fk_OID;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe Delivery;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| DelID       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| agent_ID    | int(11)     | NO   |     | NULL    |                |
+| agent_Phone | bigint(20)  | NO   |     | NULL    |                |
+| agent_name  | varchar(20) | NO   |     | NULL    |                |
+| status      | varchar(20) | NO   |     | NULL    |                |
+| ETA         | varchar(20) | NO   |     | NULL    |                |
+| OID         | int(11)     | NO   | MUL | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> 
+
