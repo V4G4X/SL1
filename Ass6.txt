@@ -23,5 +23,15 @@ B]. Built in functions (now (), date (), day (), time () etc)
 
  Find purchase details of the customers, group by product category.
  	SELECT category, COUNT(*)   FROM   Item     GROUP BY category;
+ 	Show User details, 
+ 	link 
+ 	User.UID <---> Order.UID 
+ 	Order.OID <------> Contains.OID 
+ 	Contains.item_ID <---------> Item.item_ID
+ 	
+ 	SELECT fName,lName,phone,email, Orders.stat,category  from User,Orders,Contains,Item Where User.UID = Orders.UID AND Order.OID = Contains.OID AND Contains.item_ID = Item.item_ID GROUP BY category;
+ 
+    SELECT User.UID, fName,lName,phone,email, Orders.stat,category  from User,Orders,Contains,Item Where User.UID = Orders.UID AND Orders.OID = Contains.OID AND Contains.item_ID = Item.item_ID;
+
  
  Find the purchase details of all the customers who mad shopping today.(Using having clause)
