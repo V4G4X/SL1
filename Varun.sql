@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: OrderManagementSystem
 -- ------------------------------------------------------
--- Server version	5.7.26-0ubuntu0.16.04.1
+-- Server version	5.7.26
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `Address`;
 CREATE TABLE `Address` (
   `UID` int(11) NOT NULL,
   `Address` varchar(255) NOT NULL,
+  `City` varchar(255) NOT NULL,
   KEY `UID` (`UID`),
   CONSTRAINT `Address_ibfk_1` FOREIGN KEY (`UID`) REFERENCES `User` (`UID`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -36,7 +37,7 @@ CREATE TABLE `Address` (
 
 LOCK TABLES `Address` WRITE;
 /*!40000 ALTER TABLE `Address` DISABLE KEYS */;
-INSERT INTO `Address` VALUES (1,'938-8921 Morbi Rd.'),(2,'Ap #938-8790 Dictum St.'),(3,'894-9982 Ipsum Ave'),(4,'322 Pede Street'),(5,'417-119 Hendrerit Rd.'),(6,'Ap #945-4408 Vulputate Road'),(7,'Ap #575-1163 Dictum Av.'),(8,'Ap #502-6242 Ultricies Street'),(9,'6985 Ac Av.'),(10,'689-991 At, Street'),(11,'7794 Gravida Av.'),(12,'P.O. Box 420, 5982 Sed Rd.'),(13,'P.O. Box 470, 6380 Luctus Rd.'),(14,'5930 Pellentesque Street'),(14,'4560 Praesent St.'),(15,'550-8464 Luctus Rd.'),(16,'644-9526 Montes, St.'),(16,'Ap #701-4443 Neque Ave'),(17,'P.O. Box 923, 1383 Lacus, Rd.'),(17,'P.O. Box 835, 4104 Enim St.'),(17,'755-6119 Semper. St.'),(18,'Ap #619-9946 Lacus Av.'),(19,'707-2309 Arcu. St.'),(19,'824-9366 Ligula Av.'),(20,'P.O. Box 522, 7198 Nec, Av.'),(21,'3613 Arcu. St.'),(22,'P.O. Box 923, 5731 Dolor Av.'),(23,'106-3521 Dis Ave'),(24,'671-4996 Metus. St.'),(25,'P.O. Box 385, 1231 At Avenue'),(26,'P.O. Box 336, 833 Vitae Rd.'),(27,'P.O. Box 730, 6768 Dis St.'),(28,'1150 Erat Avenue'),(28,'714-6748 Tincidunt Rd.'),(29,'934 Eu Av.'),(30,'263-2753 Fringilla St.'),(31,'526-5019 Nisl Ave'),(32,'5203 Semper St.'),(33,'5258 Feugiat. Road'),(34,'Ap #162-3720 Fringilla Avenue'),(35,'Ap #969-2662 Mus. St.'),(35,'987-2591 Orci Street'),(36,'9271 Eu Av.'),(37,'495-2955 Nec Rd.'),(38,'5794 Diam. Rd.'),(39,'161-1354 Lacus. St.'),(40,'P.O. Box 251, 4455 Aenean Av.'),(41,'579-5027 Commodo Street'),(42,'4957 Purus Av.'),(42,'P.O. Box 250, 8972 Posuere St.'),(42,'P.O. Box 265, 4468 Quisque Road'),(43,'819-925 At, Road'),(44,'954-9068 Neque. Rd.'),(45,'4360 Torquent Rd.'),(46,'Ap #527-230 Mattis. Rd.'),(46,'5176 Gravida Street'),(47,'Ap #859-8606 Vel Avenue'),(47,'P.O. Box 877, 2033 Tempor, Rd.'),(48,'8798 Porttitor Rd.'),(49,'P.O. Box 204, 5728 Rutrum Rd.'),(50,'8089 Mattis St.');
+INSERT INTO `Address` VALUES (1,'938-8921 Morbi Rd.','Pune'),(2,'Ap #938-8790 Dictum St.','Mumbai'),(3,'894-9982 Ipsum Ave','Delhi'),(4,'322 Pede Street','Novigrad'),(5,'417-119 Hendrerit Rd.','Oxenfurt'),(6,'Ap #945-4408 Vulputate Road','Cintra'),(7,'Ap #575-1163 Dictum Av.','Toussaint'),(8,'Ap #502-6242 Ultricies Street','Rivia'),(9,'6985 Ac Av.','Pune'),(10,'689-991 At, Street','Mumbai'),(11,'7794 Gravida Av.','Delhi'),(12,'P.O. Box 420, 5982 Sed Rd.','Novigrad'),(13,'P.O. Box 470, 6380 Luctus Rd.','Oxenfurt'),(14,'5930 Pellentesque Street','Cintra'),(14,'4560 Praesent St.','Cintra'),(15,'550-8464 Luctus Rd.','Toussaint'),(16,'644-9526 Montes, St.','Rivia'),(16,'Ap #701-4443 Neque Ave','Rivia'),(17,'P.O. Box 923, 1383 Lacus, Rd.','Pune'),(17,'P.O. Box 835, 4104 Enim St.','Pune'),(17,'755-6119 Semper. St.','Pune'),(18,'Ap #619-9946 Lacus Av.','Mumbai'),(19,'707-2309 Arcu. St.','Delhi'),(19,'824-9366 Ligula Av.','Delhi'),(20,'P.O. Box 522, 7198 Nec, Av.','Novigrad'),(21,'3613 Arcu. St.','Oxenfurt'),(22,'P.O. Box 923, 5731 Dolor Av.','Cintra'),(23,'106-3521 Dis Ave','Toussaint'),(24,'671-4996 Metus. St.','Rivia'),(25,'P.O. Box 385, 1231 At Avenue','Pune'),(26,'P.O. Box 336, 833 Vitae Rd.','Mumbai'),(27,'P.O. Box 730, 6768 Dis St.','Delhi'),(28,'1150 Erat Avenue','Novigrad'),(28,'714-6748 Tincidunt Rd.','Novigrad'),(29,'934 Eu Av.','Oxenfurt'),(30,'263-2753 Fringilla St.','Cintra'),(31,'526-5019 Nisl Ave','Toussaint'),(32,'5203 Semper St.','Rivia'),(33,'5258 Feugiat. Road','Pune'),(34,'Ap #162-3720 Fringilla Avenue','Mumbai'),(35,'Ap #969-2662 Mus. St.','Delhi'),(35,'987-2591 Orci Street','Delhi'),(36,'9271 Eu Av.','Novigrad'),(37,'495-2955 Nec Rd.','Oxenfurt'),(38,'5794 Diam. Rd.','Cintra'),(39,'161-1354 Lacus. St.','Toussaint'),(40,'P.O. Box 251, 4455 Aenean Av.','Rivia'),(41,'579-5027 Commodo Street','Pune'),(42,'4957 Purus Av.','Mumbai'),(42,'P.O. Box 250, 8972 Posuere St.','Mumbai'),(42,'P.O. Box 265, 4468 Quisque Road','Mumbai'),(43,'819-925 At, Road','Delhi'),(44,'954-9068 Neque. Rd.','Novigrad'),(45,'4360 Torquent Rd.','Oxenfurt'),(46,'Ap #527-230 Mattis. Rd.','Cintra'),(46,'5176 Gravida Street','Cintra'),(47,'Ap #859-8606 Vel Avenue','Toussaint'),(47,'P.O. Box 877, 2033 Tempor, Rd.','Toussaint'),(48,'8798 Porttitor Rd.','Rivia'),(49,'P.O. Box 204, 5728 Rutrum Rd.','Pune'),(50,'8089 Mattis St.','Mumbai');
 /*!40000 ALTER TABLE `Address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,10 +136,11 @@ CREATE TABLE `Orders` (
   `timestmp` varchar(50) NOT NULL,
   `stat` varchar(50) NOT NULL,
   `UID` int(11) NOT NULL,
+  `ttl_amt` int(11) NOT NULL,
   PRIMARY KEY (`OID`),
   KEY `UID` (`UID`),
   CONSTRAINT `Orders_ibfk_1` FOREIGN KEY (`UID`) REFERENCES `User` (`UID`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,7 +149,7 @@ CREATE TABLE `Orders` (
 
 LOCK TABLES `Orders` WRITE;
 /*!40000 ALTER TABLE `Orders` DISABLE KEYS */;
-INSERT INTO `Orders` VALUES (1,'2020-07-18 18:00:34','Processing',41),(2,'2020-05-04 08:50:36','Processing',21),(3,'2020-01-01 01:53:14','Dispatched',44),(4,'2018-12-08 06:53:32','Dispatched',29),(5,'2020-02-09 22:58:32','Delivered',19),(6,'2020-05-05 18:36:49','Delivered',43),(7,'2019-05-12 03:40:51','Processing',46),(8,'2019-05-22 09:30:32','Processing',44),(9,'2019-01-12 08:35:24','Dispatched',37),(10,'2019-08-29 15:53:48','Dispatched',38),(11,'2019-01-21 00:08:36','Delivered',17),(12,'2019-05-25 16:28:26','Delivered',21),(13,'2019-05-17 23:35:22','Processing',46),(14,'2018-07-28 23:14:47','Processing',22),(15,'2020-05-18 00:54:50','Dispatched',13),(16,'2018-11-09 02:45:54','Dispatched',30),(17,'2020-06-02 06:33:09','Delivered',42),(18,'2019-08-16 08:09:33','Delivered',41),(19,'2020-01-09 15:04:21','Processing',40),(20,'2019-03-27 00:08:29','Processing',32),(21,'2019-05-26 13:35:04','Dispatched',45),(22,'2020-03-20 05:56:46','Dispatched',42),(23,'2020-03-14 21:34:41','Delivered',10),(24,'2020-03-18 19:47:26','Delivered',27),(25,'2018-11-26 06:26:46','Processing',24),(26,'2019-07-04 22:40:50','Processing',47),(27,'2019-07-17 23:25:28','Dispatched',40),(28,'2019-03-25 18:26:45','Dispatched',14),(29,'2019-01-01 12:30:12','Delivered',32),(30,'2018-08-30 10:59:50','Delivered',11),(31,'2019-05-17 04:36:32','Processing',39),(32,'2018-09-06 19:33:39','Processing',45),(33,'2018-09-20 07:08:38','Dispatched',24),(34,'2020-01-16 16:46:21','Dispatched',40),(35,'2019-01-23 03:57:01','Delivered',26),(36,'2019-08-27 00:40:35','Delivered',2),(37,'2018-12-22 02:57:15','Processing',17),(38,'2020-06-19 17:45:39','Processing',22),(39,'2019-05-23 11:51:25','Dispatched',48),(40,'2019-11-02 12:45:53','Dispatched',49),(41,'2019-10-18 11:52:16','Delivered',46),(42,'2019-01-19 22:08:45','Delivered',36),(43,'2020-01-03 16:41:26','Processing',44),(44,'2018-09-27 02:51:38','Processing',30),(45,'2020-03-17 09:01:04','Dispatched',22),(46,'2019-08-13 18:16:16','Dispatched',26),(47,'2020-05-18 06:57:28','Delivered',18),(48,'2020-06-11 01:48:39','Delivered',23),(49,'2019-09-18 08:05:48','Processing',47),(50,'2020-04-17 09:04:08','Processing',50);
+INSERT INTO `Orders` VALUES (1,'2020-07-18 18:00:34','Processing',41,6781),(2,'2020-05-04 08:50:36','Processing',21,3187),(3,'2020-01-01 01:53:14','Dispatched',44,3414),(4,'2018-12-08 06:53:32','Dispatched',29,5717),(5,'2020-02-09 22:58:32','Delivered',19,1227),(6,'2020-05-05 18:36:49','Delivered',43,174),(7,'2019-05-12 03:40:51','Processing',46,6816),(8,'2019-05-22 09:30:32','Processing',44,1013),(9,'2019-01-12 08:35:24','Dispatched',37,123),(10,'2019-08-29 15:53:48','Dispatched',38,1791),(11,'2019-01-21 00:08:36','Delivered',17,5731),(12,'2019-05-25 16:28:26','Delivered',21,4090),(13,'2019-05-17 23:35:22','Processing',46,4179),(14,'2018-07-28 23:14:47','Processing',22,6843),(15,'2020-05-18 00:54:50','Dispatched',13,1687),(16,'2018-11-09 02:45:54','Dispatched',30,3235),(17,'2020-06-02 06:33:09','Delivered',42,5483),(18,'2019-08-16 08:09:33','Delivered',41,2277),(19,'2020-01-09 15:04:21','Processing',40,205),(20,'2019-03-27 00:08:29','Processing',32,5267),(21,'2019-05-26 13:35:04','Dispatched',45,2300),(22,'2020-03-20 05:56:46','Dispatched',42,2704),(23,'2020-03-14 21:34:41','Delivered',10,2797),(24,'2020-03-18 19:47:26','Delivered',27,4624),(25,'2018-11-26 06:26:46','Processing',24,4272),(26,'2019-07-04 22:40:50','Processing',47,299),(27,'2019-07-17 23:25:28','Dispatched',40,3657),(28,'2019-03-25 18:26:45','Dispatched',14,6668),(29,'2019-01-01 12:30:12','Delivered',32,6666),(30,'2018-08-30 10:59:50','Delivered',11,3412),(31,'2019-05-17 04:36:32','Processing',39,403),(32,'2018-09-06 19:33:39','Processing',45,2747),(33,'2018-09-20 07:08:38','Dispatched',24,2319),(34,'2020-01-16 16:46:21','Dispatched',40,5033),(35,'2019-01-23 03:57:01','Delivered',26,5054),(36,'2019-08-27 00:40:35','Delivered',2,3536),(37,'2018-12-22 02:57:15','Processing',17,6514),(38,'2020-06-19 17:45:39','Processing',22,999),(39,'2019-05-23 11:51:25','Dispatched',48,2767),(40,'2019-11-02 12:45:53','Dispatched',49,938),(41,'2019-10-18 11:52:16','Delivered',46,437),(42,'2019-01-19 22:08:45','Delivered',36,1996),(43,'2020-01-03 16:41:26','Processing',44,5927),(44,'2018-09-27 02:51:38','Processing',30,6265),(45,'2020-03-17 09:01:04','Dispatched',22,6381),(46,'2019-08-13 18:16:16','Dispatched',26,519),(47,'2020-05-18 06:57:28','Delivered',18,6850),(48,'2020-06-11 01:48:39','Delivered',23,3928),(49,'2019-09-18 08:05:48','Processing',47,5131),(50,'2020-04-17 09:04:08','Processing',50,295);
 /*!40000 ALTER TABLE `Orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-26 13:11:26
+-- Dump completed on 2019-07-31 15:17:12
