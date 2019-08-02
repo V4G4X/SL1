@@ -34,4 +34,5 @@ B]. Built in functions (now (), date (), day (), time () etc)
     SELECT User.UID, fName,lName,phone,email, Orders.stat,category  from User,Orders,Contains,Item Where User.UID = Orders.UID AND Orders.OID = Contains.OID AND Contains.item_ID = Item.item_ID;
 
  
- Find the purchase details of all the customers who mad shopping today.(Using having clause)
+ Find the purchase details of all the customers who made shopping today.(Using having clause)
+ 
