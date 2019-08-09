@@ -137,7 +137,7 @@ CREATE TABLE `Orders` (
   `timestmp` varchar(50) NOT NULL,
   `stat` varchar(50) NOT NULL,
   `UID` int(11) NOT NULL,
-  `ttl_amt` int(11) NOT NULL,
+  `ttl_amt` int(11) DEFAULT NULL,
   PRIMARY KEY (`OID`),
   KEY `UID` (`UID`),
   CONSTRAINT `Orders_ibfk_1` FOREIGN KEY (`UID`) REFERENCES `User` (`UID`) ON DELETE CASCADE
@@ -190,4 +190,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-07 16:02:33
+-- Dump completed on 2019-08-09 13:14:07
