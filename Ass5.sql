@@ -1,12 +1,12 @@
-1.Display all the Purchase orders of a specific Customer.
-select
+1.Display ALL the Purchase orders OF a specific Customer.
+SELECT
   *
-from
+FROM
   Orders
-where
+WHERE
   UID = 44;
 2.Get Customer
-  and Data Item Information for a Specific Purchase Order
+  AND Data Item Information FOR a Specific Purchase ORDER
 SELECT
   fName,
   lName,
@@ -17,7 +17,7 @@ SELECT
   amount,
   quantity
 FROM
-  User,
+  USER,
   Orders,
   Contains,
   Item
@@ -26,32 +26,32 @@ WHERE
   AND Orders.OID = 43
   AND Contains.OID = Orders.OID
   AND Item.item_ID = Contains.item_ID;
-3.Get the Total Value of Purchase Orders.
+3.Get the Total Value OF Purchase Orders.
 SELECT
   SUM(Orders.ttl_amt) AS Total_Order_Value
 FROM
   Orders;
-4.List the Purchase Orders in descending order as per total.
+4.List the Purchase Orders IN descending ORDER AS per total.
 SELECT
   *
 FROM
   Orders
 ORDER BY
   ttl_amt DESC;
-5.Display the name of customers whose first name starts with “ Rav ”.(String matching :Like operator)
+5.Display the name OF customers whose FIRST name starts WITH Rav.(String matching :Like OPERATOR)
 SELECT
   fName,
   lName
 FROM
-  User
+  USER
 WHERE
-  fName Like "Sa%";
-6.Display the name of customer whose order amount is greater than all the customers.
+  fName LIKE "Sa%";
+6.Display the name OF customer whose ORDER amount IS greater than ALL the customers.
 SELECT
   fName,
   lName
 FROM
-  User
+  USER
 WHERE
   UID = (
     SELECT
@@ -66,8 +66,8 @@ WHERE
           Orders
       )
   );
-7.Display order details of customer whose city name is “ Pune ”
-  and purchase date is “ 2018 -11 -09 ”
+7.Display ORDER details OF customer whose city name IS Pune
+  AND purchase date IS 2018 - 11 - 09
 SELECT
   Orders.OID,
   Orders.timestmp,
@@ -75,23 +75,23 @@ SELECT
   Orders.UID
 FROM
   Address,
-  User,
+  USER,
   Orders
 WHERE
-  Address.City like 'Cintra'
+  Address.City LIKE 'Cintra'
   AND Address.UID = User.UID
   AND Orders.UID = User.UID
-  AND timestmp like '2018-11-09%';
+  AND timestmp LIKE '2018-11-09%';
 8.
-Add
-  discount of 5 % to all the customers whose order is more than Rs.5000 / -.
+ADD
+  discount OF 5 % TO ALL the customers whose ORDER IS more than Rs.5000 / -.
 UPDATE
   Orders
 SET
   Orders.ttl_amt = Orders.ttl_amt * '0.95'
 WHERE
   Orders.ttl_amt > '5000';
-9.Delete Purchase Order 1001.
+9.Delete Purchase ORDER 1001.
 DELETE FROM
   Orders
 WHERE

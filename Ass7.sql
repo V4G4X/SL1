@@ -26,7 +26,7 @@ WHERE
         FROM
           Item
         WHERE
-          Category NOT IN('Bread', 'Alcohol')
+          Category NOT IN ('Bread', 'Alcohol')
       )
   );
 -- Get the name and quantity of product which have either 10 or 20 or 30 quantities.
@@ -60,37 +60,37 @@ FROM
   Orders
 WHERE
   -- Find the purchase order whose purchase amount is greater than maximum purchase amount.
-select
+SELECT
   *
-from
+FROM
   Orders
-where
+WHERE
   ttl_amt > (
     SELECT
       MAX(ttl_amt)
     FROM
       Orders
   );
-User Name starts with 'E' His Order IDs Each Order 's Price
-Item' s name starts with 'P' too ETA between Jan
-  and March
-select
+USER Name starts WITH 'E' His ORDER IDs EACH ORDER 's Price
+   Item' s name starts WITH 'P' too ETA BETWEEN Jan
+  AND March
+SELECT
   fName,
   Orders.OID,
   Orders.ttl_amt,
   Item.name,
   Delivery.status
-from
-  User,
+FROM
+  USER,
   Orders,
   Contains,
   Item,
   Delivery
-where
-  fName like 'T%'
-  AND name like 'P%'
+WHERE
+  fName LIKE 'T%'
+  AND name LIKE 'P%'
   AND (
-    MONTH(ETA) between 1
+    MONTH (ETA) BETWEEN 1
     AND 3
   )
   AND User.UID = Orders.UID
