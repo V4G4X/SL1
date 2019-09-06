@@ -9,6 +9,7 @@ WHERE
   Category NOT IN ('Bread', 'Alcohol')
   AND Item.item_ID = Contains.item_ID
   AND Contains.OID = Orders.OID;
+---------------------------
 SELECT
   *
 FROM
@@ -71,9 +72,7 @@ WHERE
     FROM
       Orders
   );
-USER Name starts WITH 'E' His ORDER IDs EACH ORDER 's Price
-   Item' s name starts WITH 'P' too ETA BETWEEN Jan
-  AND March
+--USER Name starts WITH 'E' His ORDER IDs EACH ORDER 's Price   Item' s name starts WITH 'P' too ETA BETWEEN Jan  AND March
 SELECT
   fName,
   Orders.OID,
@@ -81,7 +80,7 @@ SELECT
   Item.name,
   Delivery.status
 FROM
-  USER,
+  User,
   Orders,
   Contains,
   Item,

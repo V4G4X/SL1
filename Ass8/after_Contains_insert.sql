@@ -6,14 +6,15 @@ FROM
 --   `Contains`,
   --   `Orders`,
   --   `Item`
-
+---------------------------------
 SHOW CREATE TABLE `Contains`;
-
+----------------------------
 
 WHERE
   `Orders`.`OID` = `Contains`.`OID`
   AND `Contains`.`item_ID` = `Item`.`item_ID`;
 SHOW TRIGGERS;
+-------------------
 DROP TRIGGER IF EXISTS `after_Contains_insert`;
 CREATE TRIGGER `after_Contains_insert`
 AFTER
