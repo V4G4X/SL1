@@ -1,0 +1,304 @@
+    db.Item.insert(
+    [
+        {
+            "name": "Cloves - Whole",
+            "supplier": "Nicolas Inc",
+            "category": "Sports",
+            "amount": 705
+        },
+        {
+            "name": "Mushroom - Crimini",
+            "supplier": "Hills, Breitenberg and Toy",
+            "category": "Books",
+            "amount": 3300
+        },
+        {
+            "name": "Crab Brie In Phyllo",
+            "supplier": "Rau-Waelchi",
+            "category": "Sports",
+            "amount": 7409
+        },
+        {
+            "name": "Bagel - Everything",
+            "supplier": "Shields, DuBuque and Gaylord",
+            "category": "Music",
+            "amount": 4013
+        },
+        {
+            "name": "Veal - Insides Provini",
+            "supplier": "Kiehn, Monahan and Moen",
+            "category": "Beauty",
+            "amount": 304
+        },
+        {
+            "name": "Flower - Potmums",
+            "supplier": "Torphy, Nikolaus and Walsh",
+            "category": "Beauty",
+            "amount": 2985
+        },
+        {
+            "name": "Oregano - Dry, Rubbed",
+            "supplier": "Cruickshank, Kautzer and Koss",
+            "category": "Home",
+            "amount": 6519
+        },
+        {
+            "name": "Chinese Foods - Thick Noodles",
+            "supplier": "Greenfelder and Sons",
+            "category": "Clothing",
+            "amount": 5027
+        },
+        {
+            "name": "Macaroons - Homestyle Two Bit",
+            "supplier": "Quitzon, Koepp and Kris",
+            "category": "Baby",
+            "amount": 5821
+        },
+        {
+            "name": "Cheese - Marble",
+            "supplier": "Herzog-Simonis",
+            "category": "Automotive",
+            "amount": 9918
+        },
+        {
+            "name": "Wine - Beringer Founders Estate",
+            "supplier": "Boehm, Watsica and Lubowitz",
+            "category": "Beauty",
+            "amount": 9489
+        },
+        {
+            "name": "Tea - English Breakfast",
+            "supplier": "Herzog and Sons",
+            "category": "Industrial",
+            "amount": 4193
+        },
+        {
+            "name": "Beans - Fine",
+            "supplier": "Quigley Group",
+            "category": "Health",
+            "amount": 6011
+        },
+        {
+            "name": "Radish - Pickled",
+            "supplier": "DuBuque LLC",
+            "category": "Music",
+            "amount": 9952
+        },
+        {
+            "name": "Sauce - Oyster",
+            "supplier": "Reynolds Group",
+            "category": "Electronics",
+            "amount": 8618
+        },
+        {
+            "name": "Coffee - French Vanilla Frothy",
+            "supplier": "Gislason, Mueller and Walsh",
+            "category": "Beauty",
+            "amount": 2837
+        },
+        {
+            "name": "Oats Large Flake",
+            "supplier": "Kerluke-Mertz",
+            "category": "Toys",
+            "amount": 9035
+        },
+        {
+            "name": "Wine - Pinot Noir Stoneleigh",
+            "supplier": "Fritsch-Morar",
+            "category": "Shoes",
+            "amount": 1415
+        },
+        {
+            "name": "Soup - Knorr, Veg / Beef",
+            "supplier": "Harris, Trantow and Olson",
+            "category": "Garden",
+            "amount": 8414
+        },
+        {
+            "name": "Cabbage - Green",
+            "supplier": "Yost and Sons",
+            "category": "Clothing",
+            "amount": 3046
+        },
+        {
+            "name": "Nut - Peanut, Roasted",
+            "supplier": "McClure-Altenwerth",
+            "category": "Computers",
+            "amount": 5994
+        },
+        {
+            "name": "Icecream Bar - Del Monte",
+            "supplier": "Daugherty, Gislason and Osinski",
+            "category": "Baby",
+            "amount": 9376
+        },
+        {
+            "name": "Potatoes - Idaho 80 Count",
+            "supplier": "Kutch, Ledner and Cummerata",
+            "category": "Toys",
+            "amount": 6985
+        },
+        {
+            "name": "Juice - Orange, Concentrate",
+            "supplier": "Kris and Sons",
+            "category": "Music",
+            "amount": 3134
+        },
+        {
+            "name": "Apple - Macintosh",
+            "supplier": "Wilkinson, Collier and Weber",
+            "category": "Tools",
+            "amount": 3651
+        },
+        {
+            "name": "Oil - Safflower",
+            "supplier": "Kub Group",
+            "category": "Clothing",
+            "amount": 1486
+        },
+        {
+            "name": "Bols Melon Liqueur",
+            "supplier": "Feeney-Ebert",
+            "category": "Jewelery",
+            "amount": 4808
+        },
+        {
+            "name": "Veal - Sweetbread",
+            "supplier": "Jakubowski Group",
+            "category": "Beauty",
+            "amount": 7291
+        },
+        {
+            "name": "Salt - Kosher",
+            "supplier": "Gulgowski LLC",
+            "category": "Clothing",
+            "amount": 1919
+        },
+        {
+            "name": "General Purpose Trigger",
+            "supplier": "Langosh-Stokes",
+            "category": "Computers",
+            "amount": 3441
+        },
+        {
+            "name": "Cornflakes",
+            "supplier": "Gulgowski and Sons",
+            "category": "Music",
+            "amount": 378
+        },
+        {
+            "name": "Bagel - Sesame Seed Presliced",
+            "supplier": "Runte, Raynor and Stamm",
+            "category": "Beauty",
+            "amount": 2360
+        },
+        {
+            "name": "Shrimp - Black Tiger 13/15",
+            "supplier": "Renner, Herzog and Welch",
+            "category": "Home",
+            "amount": 8024
+        },
+        {
+            "name": "Apple - Delicious, Golden",
+            "supplier": "Ebert Inc",
+            "category": "Toys",
+            "amount": 6903
+        },
+        {
+            "name": "Wakami Seaweed",
+            "supplier": "Schowalter LLC",
+            "category": "Computers",
+            "amount": 3109
+        },
+        {
+            "name": "Tuna - Fresh",
+            "supplier": "Hodkiewicz-Moore",
+            "category": "Garden",
+            "amount": 5751
+        },
+        {
+            "name": "Beef - Prime Rib Aaa",
+            "supplier": "Abernathy Inc",
+            "category": "Kids",
+            "amount": 4231
+        },
+        {
+            "name": "Apricots - Dried",
+            "supplier": "Wyman Inc",
+            "category": "Sports",
+            "amount": 7300
+        },
+        {
+            "name": "Wine - Sawmill Creek Autumn",
+            "supplier": "Bayer, Erdman and VonRueden",
+            "category": "Baby",
+            "amount": 1030
+        },
+        {
+            "name": "Cheese - Comte",
+            "supplier": "Osinski, Pouros and Schuppe",
+            "category": "Toys",
+            "amount": 6973
+        },
+        {
+            "name": "Water - Spring Water 500ml",
+            "supplier": "Stamm-Corkery",
+            "category": "Clothing",
+            "amount": 3948
+        },
+        {
+            "name": "Nantucket Apple Juice",
+            "supplier": "Bruen Inc",
+            "category": "Books",
+            "amount": 2330
+        },
+        {
+            "name": "Cake Circle, Paprus",
+            "supplier": "Nolan-Howell",
+            "category": "Industrial",
+            "amount": 9291
+        },
+        {
+            "name": "Wine - Kwv Chenin Blanc South",
+            "supplier": "Larkin-Mills",
+            "category": "Home",
+            "amount": 4718
+        },
+        {
+            "name": "Fireball Whisky",
+            "supplier": "Brekke, Herman and McGlynn",
+            "category": "Automotive",
+            "amount": 9706
+        },
+        {
+            "name": "Wine - White, Schroder And Schyl",
+            "supplier": "Daniel-VonRueden",
+            "category": "Kids",
+            "amount": 1644
+        },
+        {
+            "name": "Wine - Shiraz South Eastern",
+            "supplier": "Abshire-Wintheiser",
+            "category": "Kids",
+            "amount": 9709
+        },
+        {
+            "name": "Danishes - Mini Cheese",
+            "supplier": "Tromp and Sons",
+            "category": "Baby",
+            "amount": 2961
+        },
+        {
+            "name": "Coffee Guatemala Dark",
+            "supplier": "Schiller-Mayert",
+            "category": "Tools",
+            "amount": 4361
+        },
+        {
+            "name": "Red Currants",
+            "supplier": "Beahan-Kulas",
+            "category": "Garden",
+            "amount": 6221
+        }
+    ]
+    )
